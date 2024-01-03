@@ -96,7 +96,6 @@ app.use((req,res,next) =>{
 
 app.use("/listings", ListingRoutes);
 app.use("/listings/:id/review", ReviewRoutes);
-app.use("/",userRoutes);
 
 app.use("/listings", (err, req, res, next) => {
     let { statuscode = 500, message = "something went wrong" } = err;
