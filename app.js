@@ -93,6 +93,9 @@ app.use((req,res,next) =>{
     next();
 });
 
+app.get("/",(req,res) =>{
+    res.render("/listing/index.js");
+})
 
 app.use("/listings", ListingRoutes);
 app.use("/listings/:id/review", ReviewRoutes);
