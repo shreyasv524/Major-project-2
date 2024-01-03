@@ -93,10 +93,6 @@ app.use((req,res,next) =>{
     next();
 });
 
-app.get("/", (req, res) => {
-    res.send("root route is working");
-});
-
 
 app.use("/listings", ListingRoutes);
 app.use("/listings/:id/review", ReviewRoutes);
