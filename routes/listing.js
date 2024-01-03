@@ -8,9 +8,11 @@ const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
 const listing = require("../models/listing.js");
 
-router.route("/")
+router.route("/listings")
 .get(wrapAsync(listingcontroller.index))
 .post(isLogedIn,upload.single('listing[image]'),listingcontroller.createListing);
+
+
 router.get("/new", isLogedIn,listingcontroller.new)
 router.get("/trending",listingcontroller.trending)
 router.get("/rooms",listingcontroller.rooms)
