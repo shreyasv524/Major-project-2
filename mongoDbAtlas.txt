@@ -1,0 +1,4 @@
+username: shreyasv524
+password: WFhoGJczzosJZATU
+
+mongodb+srv://shreyasv524:WFhoGJczzosJZATU@cluster0.chgqfka.mongodb.net/?retryWrites=true&w=majority

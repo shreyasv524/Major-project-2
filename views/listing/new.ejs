@@ -1,0 +1,83 @@
+<%- layout("/layouts/boilerplate") -%>
+
+  <body>
+    <h3 class="heading offset-2">Enter the details for new listing</h3>
+    <div class="row">
+      <div class="col-8 offset-2">
+        <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+          <label for="title">Enter Titles</label>
+          <input type="text" name="listing[title]" id="title" placeholder="Ex.Ski-In/Ski-Out Chalet"
+            class="form-control" required>
+
+          <label for="description">Enter Short Description</label>
+          <textarea type="text" name="listing[description]" id="description" class="form-control" required></textarea>
+
+          <!-- <label for="url">Enter Image Url</label>
+                    <input type="text" name="listing[image]" id="url" placeholder="Enter image URL/Link" class="form-control"> -->
+
+
+          <label for="url">Upload Listing Image</label>
+          <input type="file" name="listing[image]" id="url" placeholder="Enter image URL/Link" class="form-control">
+
+
+          <div class="row">
+            <div class="col-lg-4">
+              <label for="price">Enter price</label>
+              <input type="text" name="listing[price]" id="price" placeholder="1200" class="form-control" required>
+            </div>
+            <div class="col-lg-8">
+              <label for="location">Enter Location</label>
+              <input type="text" name="listing[location]" id="location" placeholder="Jaipur, Rajasthan"
+                class="form-control" required>
+            </div>
+          </div>
+
+          <label for="country">Enter Country</label>
+          <input type="text" name="listing[country]" id="country" placeholder="India" class="form-control" required>
+
+          <label for="country">category: &nbsp;&nbsp;&nbsp;</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio1" value="trending">
+            <label class="form-check-label" for="inlineRadio1">trending</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio2" value="rooms">
+            <label class="form-check-label" for="inlineRadio2">rooms</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio3"
+              value="iconic-cities">
+            <label class="form-check-label" for="inlineRadio3">iconic-cities</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio4" value="mountains">
+            <label class="form-check-label" for="inlineRadio4">mountains</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio5"
+              value="amazing-pools">
+            <label class="form-check-label" for="inlineRadio5">amazing-pools</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio6" value="castle">
+            <label class="form-check-label" for="inlineRadio6">castle</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio7" value="camping">
+            <label class="form-check-label" for="inlineRadio7">camping</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio8" value="farms">
+            <label class="form-check-label" for="inlineRadio8">farms</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="listing[category]" id="inlineRadio9" value="arctic">
+            <label class="form-check-label" for="inlineRadio9">arctic</label>
+          </div>
+
+
+          <div><button class="btn add-btn">Add</button></div>
+        </form>
+      </div>
+    </div>
+  </body>
