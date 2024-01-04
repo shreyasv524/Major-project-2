@@ -102,9 +102,9 @@ try {
     // }
     const newlisting = req.body.listing;
     let newlist = new listing(newlisting);
-    newlist.owner = req.user._id;
-    newlist.image.url = url;
-    newlist.image.filename = filename;
+    // newlist.owner = req.user._id;
+    // newlist.image.url = url;
+    // newlist.image.filename = filename;
     newlist.save();
     req.flash("success", "listing was inserted successfull");
     res.redirect("/listings");
