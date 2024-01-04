@@ -87,7 +87,6 @@ module.exports.castle = async(req,res) =>{
 }
 
 module.exports.createListing = async(req, res, next) => {
-//    res.send("route is working");
 if (!req.body.listing) {
     console.log("error was found");
     throw new ExpressError(400, (_message));
@@ -102,7 +101,7 @@ try {
     // }
     const newlisting = req.body.listing;
     let newlist = new listing(newlisting);
-    // newlist.owner = req.user._id;
+    newlist.owner = req.user._id;
     // newlist.image.url = url;
     // newlist.image.filename = filename;
     newlist.save();
