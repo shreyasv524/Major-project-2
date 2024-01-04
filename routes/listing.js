@@ -26,7 +26,7 @@ router.route("/listings")
 .get(wrapAsync(listingcontroller.index));
 
 router.route("/listings/newest")
-.post(upload.single('listing[image]'),isLogedIn,listingcontroller.createListing);
+.post(upload.single('listing[image]'),listingcontroller.createListing);
 
 
 router.get("/listings/edit/:id", isLogedIn,isowner, wrapAsync(listingcontroller.editListingForm));
