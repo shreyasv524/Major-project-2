@@ -87,7 +87,30 @@ module.exports.castle = async(req,res) =>{
 }
 
 module.exports.createListing = async(req, res) => {
-   res.send("route is working");
+//    res.send("route is working");
+if (!req.body.listing) {
+    console.log("error was found");
+    throw new ExpressError(400, (_message));
+}
+try {
+    console.log("create route was running");
+    const url = req.file.path;
+    const filename = req.file.filename;
+    const newlisting = req.body.listing;
+    let newlist = new listing(newlisting);
+    newlist.owner = req.user._id;
+    newlist.image.url = url;
+    newlist.image.filename = filename;
+    newlist.save();
+    req.flash("success", "listing was inserted successfull");
+    res.redirect("/listings");
+console.log("newlist: ",newlist);
+
+}
+catch (err) {
+    next(err);
+}
+
 }
 
 module.exports.showListing = async (req, res) => {
