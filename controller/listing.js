@@ -10,6 +10,7 @@ module.exports.index = async (req, res) => {
 }
 
 module.exports.new = (req, res) => {
+    console.log("new route was working");
     return res.render("./listing/new.ejs");
 }
 
