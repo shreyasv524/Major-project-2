@@ -86,7 +86,7 @@ module.exports.castle = async(req,res) =>{
 
 }
 
-module.exports.createListing = async(req, res) => {
+module.exports.createListing = async(req, res, next) => {
 //    res.send("route is working");
 if (!req.body.listing) {
     console.log("error was found");
