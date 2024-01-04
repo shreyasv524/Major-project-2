@@ -103,7 +103,7 @@ app.use("/",userRoutes);
 
 
 app.use("/listings", (err, req, res, next) => {
-    let { statuscode = 500, message = "something went wrong" } = err;
+    let { statuscode = 404, message = "something went wrong" } = err;
     res.status(statuscode).render("listing/error.ejs", { err })
 });
 
