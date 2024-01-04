@@ -93,10 +93,10 @@ app.use((req,res,next) =>{
     next();
 });
 
-app.get("/",(req,res) =>{
-    // res.send("hello this is root");
-    res.render("/listing/index.js");
-})
+// app.get("/",(req,res) =>{
+//     res.send("hello this is root");
+//     res.render("/listing/index.js");
+// })
 
 app.use("/", ListingRoutes);
 app.use("/listings/:id/review", ReviewRoutes);
