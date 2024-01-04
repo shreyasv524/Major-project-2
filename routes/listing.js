@@ -7,9 +7,6 @@ const multer = require("multer");
 const {storage} = require("../cloudConfig.js");
 const upload = multer({storage});
 
-router.route("/listings")
-.get(wrapAsync(listingcontroller.index))
-.post(isLogedIn,upload.single('listing[image]'),listingcontroller.createListing);
 
 
 router.get("/listings/new", isLogedIn,listingcontroller.new);
@@ -25,6 +22,9 @@ router.get("/listings/arctic",listingcontroller.arctic);
 
 
 
+router.route("/listings")
+.get(wrapAsync(listingcontroller.index))
+.post(isLogedIn,upload.single('listing[image]'),listingcontroller.createListing);
 
 
 router.get("/listings/edit/:id", isLogedIn,isowner, wrapAsync(listingcontroller.editListingForm));
