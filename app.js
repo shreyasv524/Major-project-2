@@ -103,7 +103,7 @@ app.use("/listings/:id/review", ReviewRoutes);
 app.use("/",userRoutes);
 
 
-app.use("/listings", (err, req, res, next) => {
+app.use("/", (err, req, res, next) => {
     let { statuscode = 404, message = "something went wrong" } = err;
     res.status(statuscode).render("listing/error.ejs", { err })
 });
