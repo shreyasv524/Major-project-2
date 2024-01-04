@@ -87,9 +87,11 @@ module.exports.castle = async(req,res) =>{
 
 module.exports.createListing = async (req, res, next) => {
     if (!req.body.listing) {
+        console.log("error was found");
         throw new ExpressError(400, (_message));
     }
     try {
+        console.log("create route was running");
         const url = req.file.path;
         const filename = req.file.filename;
         const newlisting = req.body.listing;
