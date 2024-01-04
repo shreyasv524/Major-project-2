@@ -96,7 +96,7 @@ try {
     console.log("create route was running");
     let url;
     let filename;
-    if(!typeof req.file.path == "undefined"){
+    if(typeof req.file.path != "undefined"){
          url = req.file.path;
          filename = req.file.filename;
     }
