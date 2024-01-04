@@ -94,8 +94,12 @@ if (!req.body.listing) {
 }
 try {
     console.log("create route was running");
-    const url = req.file.path;
-    const filename = req.file.filename;
+    let url;
+    let filename;
+    if(!typeof req.file.path == "undefined"){
+         url = req.file.path;
+         filename = req.file.filename;
+    }
     const newlisting = req.body.listing;
     let newlist = new listing(newlisting);
     newlist.owner = req.user._id;
