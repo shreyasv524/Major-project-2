@@ -116,7 +116,7 @@ module.exports.showListing = async (req, res) => {
     if (!listingg) {
         req.flash("fail", "listing doesn't exist");
         next(new ExpressError(404, "enter right id"));
-        return res.redirect("/listings");
+        return res.redirect("/");
 
     }
     res.render("./listing/show.ejs", { listingg });
