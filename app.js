@@ -94,7 +94,8 @@ app.use((req,res,next) =>{
 });
 
 app.get("/",(req,res) =>{
-    res.send("hello this is root");
+    // res.send("hello this is root");
+    res.render("/listing/index.js");
 })
 
 app.use("/", ListingRoutes);
