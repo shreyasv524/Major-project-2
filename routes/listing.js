@@ -12,16 +12,16 @@ router.route("/listings")
 .post(isLogedIn,upload.single('listing[image]'),listingcontroller.createListing);
 
 
-router.get("/new", isLogedIn,listingcontroller.new)
-router.get("/trending",listingcontroller.trending)
-router.get("/rooms",listingcontroller.rooms)
-router.get("/iconic-cities",listingcontroller.iconic_cities)
-router.get("/mountains",listingcontroller.mountains)
-router.get("/amazing-pools",listingcontroller.amazing_pools)
-router.get("/castle",listingcontroller.castle)
-router.get("/camping",listingcontroller.camping)
-router.get("/farm",listingcontroller.farm)
-router.get("/arctic",listingcontroller.arctic);
+router.get("/listings/new", isLogedIn,listingcontroller.new);
+router.get("/listings/trending",listingcontroller.trending);
+router.get("/listings/rooms",listingcontroller.rooms);
+router.get("/listings/iconic-cities",listingcontroller.iconic_cities);
+router.get("/listings/mountains",listingcontroller.mountains);
+router.get("/listings/amazing-pools",listingcontroller.amazing_pools);
+router.get("/listings/castle",listingcontroller.castle);
+router.get("/listings/camping",listingcontroller.camping);
+router.get("/listings/farm",listingcontroller.farm);
+router.get("/listings/arctic",listingcontroller.arctic);
 
 
 
