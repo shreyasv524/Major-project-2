@@ -86,7 +86,7 @@ module.exports.castle = async(req,res) =>{
 
 }
 
-module.exports.createListing = (req, res) => {
+module.exports.createListing = async(req, res) => {
    res.send("route is working");
 }
 
