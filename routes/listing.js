@@ -26,8 +26,8 @@ router.route("/listings")
 
 router.route("/listings/newest")
 .post(upload.single('listing[imgurl]') ,(req,res) =>{
-    // listingcontroller.createListing
-    res.send(req.file);
+    listingcontroller.createListing
+    // res.send(req.file);
 });
 
 
