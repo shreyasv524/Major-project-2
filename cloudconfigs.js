@@ -8,12 +8,21 @@ cloudinary.config({
     api_secret: process.env.CLOUD_API_SECRET,
 });
 
+// const storage = new CloudinaryStorage({
+//     cloudinary: cloudinary,
+//     params:{
+//         allowerdformats: ["png","jpg","jpeg"],
+//     }
+// });
+
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
-    params:{
-        allowerdformats: ["png","jpg","jpeg"],
-    }
-});
+    params: {
+      folder: 'some-folder-name',
+      format: async (req, file) => 'png', // supports promises as well
+      public_id: (req, file) => 'computed-filename-using-request',
+    },
+  });
 
 module.exports = {
     cloudinary,
