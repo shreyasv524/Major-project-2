@@ -5,7 +5,7 @@ const { isLogedIn , isowner} = require("../middleware.js");
 const listingcontroller = require("../controller/listing.js");
 const {storage} = require("../cloudconfigs.js");
 const multer = require('multer');
-const upload = multer({storage});
+const upload = multer({dest: 'uploads/'});
 
 
 router.get("/listings/new", isLogedIn,listingcontroller.new);
