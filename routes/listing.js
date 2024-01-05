@@ -25,8 +25,8 @@ router.route("/listings")
 .get(wrapAsync(listingcontroller.index));
 
 router.route("/listings/newest")
-.post((req,res) =>{
-    res.send(req.file);
+.post(upload.single('listing[image]') ,(req,res) =>{
+    listingcontroller.createListing
 });
 
 
